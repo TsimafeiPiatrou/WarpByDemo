@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test suite demo" thread-count="3" parallel="tests" >
+    <test name="test 1">
+        <classes>
+            <class name="TestDemo">
+                <methods>
+                    <include name="cartTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="test 2">
+        <classes>
+            <class name="TestDemo">
+                <methods>
+                    <include name="menuTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="test 3">
+        <classes>
+            <class name="TestDemo">
+                <methods>
+                    <include name="catalogTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="test 4">
+        <classes>
+            <class name="TestDemo">
+                <methods>
+                    <include name="customerSingInTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="test 5">
+        <classes>
+            <class name="TestDemo">
+                <methods>
+                    <include name="customerSingOutTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
