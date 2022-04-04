@@ -13,7 +13,7 @@ pipeline {
                 git 'https://github.com/TsimafeiPiatrou/WarpByDemo.git'
 
                 // To run Maven on a Windows agent, use
-                 bat "mvn clean test -Dmaven.compiler.source=11 -Dmaven.compiler.target=11"
+                 bat "mvn clean test -Dmaven.test.failure.ignore=true -Dmaven.compiler.source=11 -Dmaven.compiler.target=11"
             }
 
             post {
