@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Testing') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/TsimafeiPiatrou/WarpByDemo.git'
@@ -23,6 +23,19 @@ pipeline {
                     junit '**/target/surefire-reports/TEST-*.xml'
                 }
             }
+        }
+        stage('Reporting') {
+            steps {
+                script {
+                     allure([
+                             includeProperties: false,
+                             jdk: '',
+                             properties: [],
+                             reportBuildPolicy: 'ALWAYS',
+                             results: [[path: 'target/allure-results']]
+                     ])
+             }
+         }
         }
     }
 }
