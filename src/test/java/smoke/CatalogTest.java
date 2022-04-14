@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class CatalogTest extends BaseAuthenticatedTest {
 
-    public static final String TEST_PRODUCT_TITLE = "Геймпад DualSense (PS5)";
+    public static final String TEST_PRODUCT_TITLE = "DualSense (PS5)";
 
 
     @Test
