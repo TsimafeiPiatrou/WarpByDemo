@@ -1,4 +1,10 @@
 pipeline {
+    environment {
+        driver_path = "src/test/resources/chromedriver.exe"
+        valid_login = "timap446@vk.com"
+        valid_password = "yVQs6DCXed2W9XV"
+    }
+
     agent any
 
     tools {
@@ -7,6 +13,14 @@ pipeline {
     }
 
     stages {
+        stage('Environment') {
+                    steps {
+                        sh 'echo "driver_path is $driver_path"'
+                        sh 'echo "valid_login is $valid_login"'
+                        sh 'echo "valid_password is $valid_password"'
+                    }
+        }
+
         stage('Testing') {
             steps {
                 // Get some code from a GitHub repository
