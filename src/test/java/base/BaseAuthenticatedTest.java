@@ -22,7 +22,7 @@ public class BaseAuthenticatedTest extends BaseTest{
         String json = String.format("{\"username\": \"%s\", \"password\": \"%s\"}", USERNAME, PASSWORD);
 //        AllureUtils.attachJson(json.getBytes(StandardCharsets.UTF_8));
         Allure.addAttachment("Credentials from allure static", "text/json", json);
-        Assert.assertTrue(accountPage.isPageLoaded(), "Account page is not loaded");
+//        Assert.assertTrue(accountPage.isPageLoaded(), "Account page is not loaded");
     }
 
 }
