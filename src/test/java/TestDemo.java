@@ -7,10 +7,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class TestDemo {
 
     ChromeDriver driver;
+
+    Logger log = LogManager.getLogger(TestDemo.class);
 
     @BeforeMethod
     public void config(){
@@ -28,12 +33,14 @@ public class TestDemo {
 
     @Test
     public void cartTest(){
+        log.info("Cart open and close");
         WebElement cart = driver.findElement(By.className("cart-total-value"));
         cart.click();
     }
 
     @Test
     public void menuTest() {
+        log.info("Open menu and choose ps5");
         WebElement menu = driver.findElement(By.xpath("//div[@class='left-nav-trigger']//i[@class='material-icons']"));
         menu.click();
         WebElement menuPS5 = driver.findElement(By.xpath("//a[contains(@title,'PlayStation 5 (PS5)')]//span"));
@@ -42,12 +49,14 @@ public class TestDemo {
 
     @Test
     public void catalogTest(){
+        log.info("Catalog open and choose ps5");
         driver.findElement(By.xpath("//li[@class='amenu-item mm-2 plex']//a[@class='amenu-link']")).click();
         driver.findElement(By.xpath("//ul[@class='category-subs']//a[@href=\"https://warp.by/playstation-5-ps5\"]")).click();
     }
 
     @Test
     public void customerSingInTest(){
+        log.info("Login into account");
         WebElement customer = driver.findElement(By.className("customer-signin-module"));
         customer.click();
         driver.findElement(By.name("email")).sendKeys("timap446@vk.com");
